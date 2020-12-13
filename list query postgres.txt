@@ -1,0 +1,94 @@
+
+// ===============================================
+// CREATE USERS TABEL
+// ===============================================
+
+create table users (
+	uid serial primary key,
+	ufname varchar(50) default 'Anonymous',
+	ulname varchar(50),
+	uphone varchar(20) unique not null,
+	upin varchar(6) not null,
+	uweight integer default 0,
+	uheight integer default 0,
+	ucreatedon timestamp default current_timestamp,
+	uupdatedon timestamp default current_timestamp,
+	uphoto varchar(255) default 'https://cdn0.iconfinder.com/data/icons/yellow-colored-set-6/512/3065_man_c-512.png'
+);
+
+// ===============================================
+// CREATE DIETITIAN TABEL
+// ===============================================
+
+create table dietitians (
+	did serial primary key,
+	dfname varchar(50) default 'Anonymous',
+	dlname varchar(50),
+	dstr varchar(100),
+	dpractice varchar(100),
+	deducation varchar(100),
+	dexpertise varchar(100),
+	dexperience int,
+	dcreatedon timestamp default current_timestamp,
+	dupdatedon timestamp default current_timestamp,
+	dphoto varchar(255) default 'https://cdn0.iconfinder.com/data/icons/yellow-colored-set-6/512/3065_man_c-512.png'
+);
+
+// ===============================================
+// CREATE BOOTHS TABEL
+// ===============================================
+
+create table booths (
+	bid serial primary key,
+	bname varchar(225),
+	btype varchar(225),
+	bphoto varchar(225) default 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Liv_3yLJRz43h3dmzUmETOFR8xn_qJ9buQ&usqp=CAU'
+);
+
+
+insert into booths (bname, btype, bphoto) values
+('Stasiun Lebak Bulus Grab', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-07/1-lebakbulusgrab.jpg'),
+('Stasiun Haji Nawi', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-07/4-hajinawi.jpg'),
+('Stasiun ASEAN', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-07/7-asean.jpg'),
+('Stasiun Bendungan Hilir', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-07/10-bendunganhilir.jpg'),
+('Stasiun Bundaran HI', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-07/13-bundaranhi.jpg'),
+('Stasiun Fatmawati', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-05/48288458317_1cccc70445_o.jpg'),
+('Stasiun Blok A', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-07/5-bloka.jpg'),
+('Stasiun Senayan', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-07/8-senayan.jpg'),
+('Stasiun Setiabudi Astra', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-05/48288396931_46acc33223_o.jpg'),
+('Stasiun Cipete Raya', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-07/3-cipeteraya.jpg'),
+('Stasiun Blok M BCA', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-07/6-blokmbca.jpg'),
+('Stasiun Istora Mandiri', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-07/9-istoramandiri.jpg'),
+('Stasiun Dukuh Atas BNI', 'MRT Station', 'https://jakartamrt.co.id/sites/default/files/2020-07/12-dukuhatasbni.jpg'),
+
+
+// ===============================================
+// CREATE MEALS TABEL
+// ===============================================
+
+create table meals(
+	mid serial primary key,
+	mname varchar(225),
+	minfo varchar(225),
+	mprice int,	
+	mphoto varchar(225) default 'https://www.pngitem.com/pimgs/m/43-435645_healthy-food-food-icon-png-download-healthy-food.png'
+);
+
+insert into meals (mname, minfo, mprice, mphoto) values
+('Regular Meal Box', 'Affordable personalized meal box', 35000, 'https://1.bp.blogspot.com/-jpJAK2TW_5s/X8gwzlLTplI/AAAAAAAAAF8/4RgVMFKKM1Q_0-lYEqHs6r4hGp3-p8JlQCNcBGAsYHQ/s320/Regular%2BMeal%2BBox.jpg'),
+('Regular Western Meal Box', 'Affordable Western cuisine personalized meal box', 50000, 'https://1.bp.blogspot.com/-jLrqUiMTHe8/X8gwrpqTHKI/AAAAAAAAAF0/IxNV8eaUlyMJeSOufE9F56L7oSsIjOW8gCNcBGAsYHQ/s320/Regular%2BWestern%2BMeal%2BBox.jpg'),
+('Premium Meal Box', 'Premium-quality meal box, made with high-grade quality of ingredients.', 75000, 'https://1.bp.blogspot.com/-215X6tqOXxA/X8gwrRf7cuI/AAAAAAAAAFw/T-7QwQ_vI1E0suX0cj3n8hyvMUEdHmU5QCNcBGAsYHQ/s320/Premium%2BMeal%2BBox.jpg'),
+('Add-ons', 'Fruits & healthy snacks', 35000, 'https://1.bp.blogspot.com/-4voqorHkX_E/X8gwo71tHfI/AAAAAAAAAFk/t1C1PtmEVDoP4UkyMspNTR3J-QGPWps7gCNcBGAsYHQ/s0/Buah-Potong.jpg');
+
+// ===============================================
+// CREATE PAYMENTMETHOD TABEL
+// ===============================================
+
+create table paymethod(
+	pmid serial primary key,
+	pmname varchar(225),
+	pmphoto varchar(225) default 'https://thumbs.dreamstime.com/b/payment-icon-flat-style-payment-icon-flat-style-hand-holding-money-yellow-background-circle-124180489.jpg'
+);
+
+
+
